@@ -1,0 +1,45 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Material design sign up form</title>
+  
+  
+  
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  
+</head>
+
+<body>
+  <div id="login-box">
+  <div class="left">
+    <h1>Sign up</h1>
+    <form method="POST" class="post-form">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" name="signup_submit" value = "Sign me up">Submit</button>
+    <!-- <input type="text" name="username" placeholder="Username" />
+    <input type="text" name="email" placeholder="E-mail" />
+    <input type="password" name="password" placeholder="Password" />
+    <input type="password" name="password2" placeholder="Retype password" />
+     -->
+    <!-- <input type="submit" name="signup_submit" value="Sign me up" /> -->
+    </form>
+  </div>
+  
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+    
+    <a href="{% url 'social:begin' 'facebook' %}"><button class="social-signin facebook" >Log in with facebook</button></a>
+    <!-- <button class="social-signin twitter">Log in with Twitter</button> -->
+    <!-- <button class="social-signin google">Log in with Google+</button> -->
+  </div>
+  <div class="or">OR</div>
+</div>
+  
+  
+</body>
+</html>
